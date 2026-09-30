@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FORMA | Caso de estudio</title>
+    <link rel="stylesheet" href="../css/fonts.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <style>
+      .case {
+        max-width: 860px;
+        margin: auto;
+        padding: 45px 25px;
+      }
+      .case h1 {
+        font-size: 40px;
+        margin: 30px 0 20px;
+      }
+      .case h2 {
+        font-size: 23px;
+        margin: 32px 0 15px;
+      }
+      .case p,
+      .case li {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #52604d;
+      }
+      .case table {
+        font-size: 14px;
+      }
+      .case .lead {
+        font-size: 20px;
+      }
+      .case a {
+        color: #2548ed;
+      }
+      .case section {
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="case">
+      <a href="../index.html">Volver a la colección</a>
+      <p class="eyebrow" style="margin-top: 35px">PROYECTO 02 / MIGUEL ANGEL RAMIREZ FRANCISCO</p>
+      <h1>FORMA: del catálogo al pedido.</h1>
+      <p class="lead">
+        Una experiencia de comercio que conecta diseño visual, lógica de negocio y administración
+        del inventario.
+      </p>
+      <h2>El problema</h2>
+      <p>
+        Un catálogo necesita algo más que tarjetas atractivas: las personas deben encontrar y
+        comparar productos, conocer las existencias y entender el total antes de confirmar. Al mismo
+        tiempo, quien administra la tienda necesita mantener los productos actualizados.
+      </p>
+      <h2>La solución</h2>
+      <p>
+        Una SPA en JavaScript con dos recorridos conectados. La colección permite buscar, filtrar,
+        comparar y guardar favoritos. El pedido simulado modifica el mismo inventario que utiliza el
+        panel Estudio.
+      </p>
+      <h2>El salto desde Órbita</h2>
+      <ul>
+        <li>Separación de lógica de dominio, persistencia, servicios REST, vistas y eventos.</li>
+        <li>Estado compartido por catálogo, bolsa, pedidos e inventario.</li>
+        <li>Cálculo de dinero en centavos enteros y límites de cantidad por producto.</li>
+        <li>Filtros reproducibles a través de la URL.</li>
+        <li>Fotografía de producto, galerías, comparador y bolsa lateral adaptable.</li>
+        <li>Pruebas unitarias y recorridos completos de compra e inventario.</li>
+      </ul>
+      <h2>Decisiones técnicas</h2>
+      <p>
+        El proyecto utiliza HTML, CSS, Bootstrap y JavaScript encapsulado en archivos separados.
+        Funciona por doble clic, sin compilación. Las funciones de dominio no dependen del DOM y
+        pueden probarse con Node.
+      </p>
+      <p>
+        El estado se valida al recuperarlo de localStorage. Los pedidos conservan una copia del
+        nombre y precio de cada pieza; editar un producto no cambia compras pasadas. El formulario
+        de entrega valida entradas, pero no almacena información personal.
+      </p>
+      <h2>Integración REST</h2>
+      <p>
+        El panel Estudio consulta dos categorías de DummyJSON con tiempo límite y validación de
+        respuesta. Los cambios se aplican solo después de la acción del usuario. Si la consulta
+        falla, el catálogo local sigue disponible.
+      </p>
+      <h2>Alcance real</h2>
+      <p>
+        Proyecto demostrativo. Sin cobros, autenticación ni backend propio. Las operaciones se
+        guardan en un solo navegador. Las imágenes proceden de DummyJSON y los precios son
+        ficticios. No se presenta como un cliente o una experiencia laboral real.
+      </p>
+      <h2>Guion para demostrarlo</h2>
+      <ol>
+        <li>Filtrar y recargar la colección.</li>
+        <li>Comparar dos productos y revisar una galería.</li>
+        <li>Aplicar FORMA10 en la bolsa.</li>
+        <li>Confirmar un pedido y revisar el stock.</li>
+        <li>Editar una pieza en Estudio y probar el servicio REST.</li>
+      </ol>
+      <p>
+        <a href="https://github.com/miguelramirez-dev">GitHub de Miguel Angel Ramirez Francisco</a>
+      </p>
+    </main>
+  </body>
+</html>
