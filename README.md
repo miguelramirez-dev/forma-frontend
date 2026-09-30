@@ -121,14 +121,5 @@ Incluye navegación por teclado, foco visible, etiquetas, mensajes de estado, mo
 
 Las imágenes provienen del catálogo de pruebas de DummyJSON. Los nombres en español, descripciones y precios en MXN se adaptaron con fines demostrativos; no representan ofertas comerciales ni una conversión vigente. Las especificaciones técnicas de los muebles no se verificaron. Consulta `docs/FUENTES.md` antes de reutilizarlas comercialmente.
 
-## Cómo presentarlo en una entrevista
-
-1. Filtra la colección y recarga para demostrar la URL.
-2. Compara dos piezas y abre una galería.
-3. Añade a la bolsa, modifica cantidades y aplica `FORMA10`.
-4. Confirma un pedido simulado y muestra la disminución de stock.
-5. Crea y edita un producto en Estudio.
-6. Consulta el proveedor REST, aplica disponibilidad y prueba un error de red.
-7. Explica `core.js`, las transacciones de `store.js` y los límites de una demo local.
 
 Autor del portafolio: [Miguel Angel Ramirez Francisco](https://github.com/miguelramirez-dev).
