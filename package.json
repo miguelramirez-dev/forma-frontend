@@ -1,0 +1,7 @@
+{
+  "name": "forma-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catalogo e inventario de demostracion con JavaScript modular",
+  "scripts": {"test": "node --test tests/*.test.cjs"}
+}

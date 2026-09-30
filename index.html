@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="FORMA: muebles y objetos de diseño. Aplicación de portafolio con catálogo, comparador, carrito e inventario."
+    />
+    <title>FORMA — Muebles y objetos</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="assets/vendor/lucide/lucide.min.js"></script>
+    <script defer src="js/catalog.js"></script>
+    <script defer src="js/core.js"></script>
+    <script defer src="js/store.js"></script>
+    <script defer src="js/api.js"></script>
+    <script defer src="js/views.js"></script>
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+    <div class="announcement">
+      <span>Un lugar para tus nuevas ideas.</span
+      ><span>Envío de demostración gratis desde $5,000 MXN</span>
+    </div>
+    <header class="header">
+      <a class="brand" href="#catalogo" aria-label="FORMA, inicio">FORMA<span>®</span></a>
+      <nav aria-label="Principal">
+        <a href="#catalogo" data-nav="catalogo">Colección</a
+        ><a href="#favoritos" data-nav="favoritos">Favoritos <span id="favorite-count">0</span></a
+        ><a href="#pedidos" data-nav="pedidos">Mis pedidos</a>
+      </nav>
+      <div class="header-actions">
+        <a
+          class="icon-button"
+          href="#estudio"
+          aria-label="Administrar inventario"
+          title="Administrar inventario"
+          ><i data-lucide="sliders-horizontal"></i></a
+        ><button class="cart-trigger" id="open-cart" aria-label="Abrir bolsa">
+          <i data-lucide="shopping-bag"></i><span class="bag-label">Mi bolsa</span
+          ><span id="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <div id="compare-bar" class="compare-bar" hidden></div>
+    <footer class="footer">
+      <div>
+        <a class="brand" href="#catalogo">FORMA<span>®</span></a>
+        <p>Un espacio bien pensado empieza contigo.</p>
+      </div>
+      <div>
+        <a href="docs/caso-de-estudio.html">Acerca del proyecto</a
+        ><a href="#estudio">Administrar catálogo</a
+        ><span>Proyecto demostrativo de Miguel Angel Ramirez Francisco.</span
+        ><span>Sin compras ni cobros reales. Datos guardados en este navegador.</span>
+      </div>
+    </footer>
+    <dialog id="cart" class="cart-drawer" aria-labelledby="cart-title"></dialog>
+    <dialog id="compare" class="modal-dialogue" aria-labelledby="compare-title"></dialog>
+    <dialog id="editor" class="modal-dialogue" aria-labelledby="editor-title"></dialog>
+    <dialog id="confirm" class="confirm-dialog" aria-labelledby="confirm-title"></dialog>
+    <div id="toast" class="toast-message" role="status" aria-live="polite"></div>
+    <noscript
+      ><p class="container p-4">
+        Activa JavaScript para consultar el catálogo y gestionar tu bolsa.
+      </p></noscript
+    >
+  </body>
+</html>
