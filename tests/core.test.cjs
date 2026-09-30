@@ -1,0 +1,11 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const C=require('../js/core.js');
+const seed=[{id:'1',name:'Sillón',description:'Sala de lectura',category:'Sala',price:19999,stock:3,images:['assets/products/12/1.webp'],featured:true}];
+test('calculates money in cents and rounds the discount once',()=>{const t=C.totals({'1':3},seed,'FORMA10');assert.equal(t.subtotal,59997);assert.equal(t.discount,6000);assert.equal(t.shipping,19900);assert.equal(t.total,73897);});
+test('free shipping threshold is based on subtotal',()=>{const p=[{...seed[0],price:500000}];assert.equal(C.totals({'1':1},p,'FORMA10').shipping,0);});
+test('rejects quantities exceeding stock and fractional quantities',()=>{assert.throws(()=>C.totals({'1':4},seed));assert.throws(()=>C.totals({'1':1.5},seed));});
+test('repairs local cart and favorites when records are missing',()=>{const s=C.normalize({cart:{'1':99,missing:3},favorites:['1','1','missing']},seed);assert.deepEqual(s.cart,{'1':3});assert.deepEqual(s.favorites,['1']);});
+test('rejects unsafe catalog images and malformed prices',()=>{assert.equal(C.validProduct({...seed[0],images:['javascript:alert(1)']}),false);assert.equal(C.validProduct({...seed[0],price:NaN}),false);});
+test('search is accent-insensitive and combines category and price',()=>{assert.equal(C.filterProducts(seed,{q:'sillon',category:'Sala',max:200}).length,1);assert.equal(C.filterProducts(seed,{q:'sillon',category:'Sala',max:100}).length,0);});
+test('empty cart has zero shipping',()=>{assert.equal(C.totals({},seed).total,0);});
